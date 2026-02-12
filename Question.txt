@@ -1,0 +1,201 @@
+🧪 SDP Open Book Examination
+Project Option: LMS Assignment Submission UI (Frontend Only)
+
+Duration: 5 Hours (Development)
+Evaluation: 2:00 – 4:00 PM (Demo + GitHub Review)
+Difficulty Level: Medium → Moderate Advanced (MCA Level)
+Backend: ❌ Not Allowed (Use Mock API Only)
+
+📌 Problem Statement
+
+Design and implement a Learning Management System (LMS) – Assignment Submission Interface as a Single Page Application using React.
+
+The system must simulate:
+
+Role-based login (Student / Instructor)
+
+Assignment dashboard
+
+Assignment submission flow
+
+Mock grading interface (Instructor view)
+
+Protected & role-based routing
+
+Server-state management using React Query
+
+The objective is to evaluate:
+
+Auth & protected routes
+
+Role-based access control
+
+Server vs client state separation
+
+Component composition
+
+Testing & clean architecture
+
+🎯 SECTION A — CORE REQUIREMENTS (70 Marks)
+1️⃣ Authentication & Role Selection (15 Marks)
+Functional Requirements
+
+Implement a Login page.
+
+Allow user to choose role:
+
+Student
+
+Instructor
+
+Simulate authentication (mock token).
+
+After login:
+
+Student → redirect to /student/dashboard
+
+Instructor → redirect to /instructor/dashboard
+
+Implement Logout.
+
+Technical Requirements
+
+Use React Router v6.
+
+Create ProtectedRoute.
+
+Create RoleBasedRoute wrapper.
+
+Use Context API to store:
+
+Auth state
+
+User role
+
+Token
+
+2️⃣ Assignment Dashboard (Student View) (20 Marks)
+Route
+/student/dashboard
+
+Functional Requirements
+
+Display list of assignments:
+
+Each assignment shows:
+
+Title
+
+Description
+
+Due date
+
+Status (Not Submitted / Submitted / Graded)
+
+Add button:
+
+“Submit Assignment”
+
+Technical Requirements
+
+Fetch assignments using React Query:
+
+GET /assignments
+
+
+Handle loading & error states.
+
+Create reusable AssignmentCard component.
+
+Highlight overdue assignments visually.
+
+3️⃣ Assignment Submission Form (Student) (15 Marks)
+Route
+/student/submit/:assignmentId
+
+Form Fields
+
+Student Name
+
+Submission Text (textarea)
+
+Optional file URL
+
+Submit button
+
+Validation
+
+Use React Hook Form
+
+Title & submission text required
+
+Display inline validation errors
+
+Submission Behavior
+
+Use useMutation
+
+Simulate API success
+
+Redirect back to dashboard
+
+Update assignment status to “Submitted”
+
+4️⃣ Instructor Dashboard (Mock Grading UI) (20 Marks)
+Route
+/instructor/dashboard
+
+Functional Requirements
+
+Display list of submitted assignments.
+
+For each submission:
+
+Student name
+
+Assignment title
+
+Submitted content
+
+Grade input (0–100)
+
+Feedback textarea
+
+“Submit Grade” button
+
+After grading:
+
+Status becomes “Graded”
+
+Student view reflects grade
+
+Technical Requirements
+
+Use React Query for fetching submissions.
+
+Use mutation for grading.
+
+Reusable grading form component.
+
+5️⃣ Role-Based Routing (10 Marks)
+
+You must:
+
+Restrict student routes from instructor.
+
+Restrict instructor routes from student.
+
+Redirect unauthorized access.
+
+Example:
+
+If student tries:
+
+/instructor/dashboard
+
+
+→ Redirect to student dashboard.
+
+Explain:
+
+Difference between authentication & authorization.
